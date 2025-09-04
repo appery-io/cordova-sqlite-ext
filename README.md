@@ -1,13 +1,12 @@
 # Cordova/PhoneGap sqlite storage adapter with extra features
 
+# With Fix Google API Level 35 support + Page size 16K for more information see https://appery.io
+
 Native SQLite component with API based on HTML5/[Web SQL (DRAFT) API](http://www.w3.org/TR/webdatabase/) for the following platforms:
 - Android
 - iOS
 - macOS ("osx" platform)
 - Windows 10 (UWP) DESKTOP ~~and MOBILE~~ (see below for major limitations)
-
-
-# With Fix Google API Level 35 support + Page size 16K for more information see https://appery.io
 
 <!-- [TBD] HIDE browser usage notes for now (at least):
 Browser platform is currently supported with some limitations as described in [browser platform usage notes](#browser-platform-usage-notes) section below, will be supported with more features such as numbered parameters and SQL batch API in the near future.
