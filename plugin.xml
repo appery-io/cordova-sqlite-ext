@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-sqlite-ext"
-    version="6.0.0">
+    version="6.0.1">
 
     <name>Cordova sqlite storage plugin - (...) with extra features</name>
 
@@ -34,9 +34,9 @@
         <source-file src="src/android/io/sqlc/SQLiteConnectorDatabase.java" target-dir="src/io/sqlc"/>
 
         <!-- Android-sqlite-connector [jar]: -->
-        <lib-file src="node_modules/cordova-sqlite-ext-deps/libs/sqlite-native-ndk-connector.jar" />
+        <lib-file src="libs/sqlite-native-ndk-connector.jar" />
         <!-- Android-sqlite-connector native driver [native libs in jar]: -->
-        <lib-file src="node_modules/cordova-sqlite-ext-deps/libs/sqlite-ndk-native-driver.jar" />
+        <lib-file src="libs/sqlite-ndk-native-driver.jar" />
     </platform>
 
     <!-- iOS -->
