@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/litehelpers/cordova-sqlite-ext",
   "dependencies": {
-    "git+https://github.com/appery-io/cordova-sqlite-ext-deps": "4.0.0"
+    "cordova-sqlite-ext-deps-appery": "4.0.0"
   },
   "scripts": {
     "clean-spec": "rm -rf spec/[mnp]* && git cl spec/config.xml spec/package.json && git status --ignored",
