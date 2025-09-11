@@ -1,9 +1,9 @@
 {
-  "name": "cordova-sqlite-ext",
+  "name": "cordova-sqlite-ext-appery",
   "version": "6.0.1",
   "description": "Native interface to SQLite for PhoneGap/Cordova with extra features",
   "cordova": {
-    "id": "cordova-sqlite-ext",
+    "id": "cordova-sqlite-ext-appery",
     "platforms": [
       "android",
       "ios",
