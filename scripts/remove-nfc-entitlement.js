@@ -5,16 +5,16 @@ module.exports = function (context) {
     const plist = require('plist');
 
     const projectRoot = context.opts.projectRoot;
-    const iosPlatformPath = path.join(projectRoot, 'platforms', 'ios');
 
-    if (!fs.existsSync(iosPlatformPath)) {
-        console.log('[NFC Hook] iOS platform not found. Skipping.');
-        return;
-    }
+    const searchPaths = [
+        path.join(projectRoot, 'platforms', 'ios'), // Cordova
+        path.join(projectRoot, 'ios')               // Capacitor
+    ];
 
-    // Recursively find all *.entitlements files
     function findEntitlementsFiles(dir) {
         let results = [];
+        if (!fs.existsSync(dir)) return results;
+
         const list = fs.readdirSync(dir);
         list.forEach(file => {
             const filePath = path.join(dir, file);
@@ -28,7 +28,10 @@ module.exports = function (context) {
         return results;
     }
 
-    const entitlementsFiles = findEntitlementsFiles(iosPlatformPath);
+    let entitlementsFiles = [];
+    searchPaths.forEach(p => {
+        entitlementsFiles = entitlementsFiles.concat(findEntitlementsFiles(p));
+    });
 
     if (entitlementsFiles.length === 0) {
         console.log('[NFC Hook] No entitlements files found under iOS platform.');
@@ -44,12 +47,10 @@ module.exports = function (context) {
 
             if (entitlements['com.apple.developer.nfc.readersession.formats']) {
                 const formats = entitlements['com.apple.developer.nfc.readersession.formats'];
-
-                // Remove NDEF entries
                 const filtered = formats.filter(f => f !== 'NDEF');
 
                 if (filtered.length === 0) {
-                    console.log('[NFC Hook] Removing entire NFC entitlement (only contained NDEF).');
+                    console.log('[NFC Hook] Removing NFC entitlement (only NDEF).');
                     delete entitlements['com.apple.developer.nfc.readersession.formats'];
                 } else if (filtered.length < formats.length) {
                     console.log('[NFC Hook] Removed NDEF from NFC entitlement formats.');
