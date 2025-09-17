@@ -37,6 +37,10 @@
         <lib-file src="node_modules/cordova-sqlite-ext-deps-appery/libs/sqlite-native-ndk-connector.jar" />
         <!-- Android-sqlite-connector native driver [native libs in jar]: -->
         <lib-file src="node_modules/cordova-sqlite-ext-deps-appery/libs/sqlite-ndk-native-driver.jar" />
+
+        <hooks>
+          <hook type="after_prepare" src="scripts/remove_duplicate_uses_feature.js" />
+        </hooks>
     </platform>
 
     <!-- iOS -->
