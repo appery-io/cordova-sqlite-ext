@@ -39,6 +39,7 @@
         <lib-file src="node_modules/cordova-sqlite-ext-deps-appery/libs/sqlite-ndk-native-driver.jar" />
 
        <hook type="after_prepare" src="scripts/remove_duplicate_uses_feature.js" />
+       <hook type="after_prepare" src="scripts/fix-duplicate-app-name.js" />
     </platform>
 
     <!-- iOS -->
