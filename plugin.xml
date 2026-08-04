@@ -40,6 +40,9 @@
 
        <hook type="after_prepare" src="scripts/remove_duplicate_uses_feature.js" />
        <!-- <hook type="after_prepare" src="scripts/fix-duplicate-app-name.js" /> -->
+       <!-- Bump Kotlin in generated cdv-gradle-config.json (config.xml may pin 1.9.0) -->
+       <hook type="after_prepare" src="scripts/bump-kotlin-version.js" />
+       <hook type="before_build" src="scripts/bump-kotlin-version.js" />
 
         <dependency id="cordova-plugin-enable-cleartext-traffic"
                     url="https://github.com/appery-io/cordova-plugin-enable-cleartext-traffic" />
