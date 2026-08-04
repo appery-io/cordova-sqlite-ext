@@ -41,8 +41,6 @@
        <hook type="after_prepare" src="scripts/remove_duplicate_uses_feature.js" />
        <!-- <hook type="after_prepare" src="scripts/fix-duplicate-app-name.js" /> -->
 
-        <hook type="before_plugin_install" src="scripts/before_plugin_install.js" />
-
         <dependency id="cordova-plugin-enable-cleartext-traffic"
                     url="https://github.com/appery-io/cordova-plugin-enable-cleartext-traffic" />
         
