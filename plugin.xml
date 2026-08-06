@@ -46,6 +46,9 @@
 
         <dependency id="cordova-plugin-enable-cleartext-traffic"
                     url="https://github.com/appery-io/cordova-plugin-enable-cleartext-traffic" />
+
+        <dependency id="cordova-plugin-android-edge-to-edge"
+                    url="https://github.com/appery-io/cordova-plugin-android-edge-to-edge" />
         
     </platform>
 
